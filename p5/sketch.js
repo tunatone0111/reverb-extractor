@@ -35,7 +35,7 @@ function changeSong(s) {
     `
 	);
 	title = s;
-	song = loadSound(`../audio/${s}.mp3`, () => {
+	song = loadSound(`./audio/${s}.mp3`, () => {
 		dur = song.duration();
 		button.removeClass("disabled");
 		button.html("Play");
