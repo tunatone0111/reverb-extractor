@@ -1,0 +1,61 @@
+* {
+	box-sizing: border-box;
+	margin: 0;
+	/* border: 2px solid red; */
+}
+
+body {
+	background: rgb(235, 235, 235);
+	overflow: hidden;
+	height: 100vh;
+}
+
+.wrp {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 1536px;
+	max-height: 900px;
+	display: flex;
+	flex-direction: column;
+}
+
+h1 {
+	font-family: "Arima Madurai", cursive;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 64px;
+	line-height: 105px;
+	color: #393b44;
+}
+
+.vis {
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: space-evenly;
+	align-items: center;
+	background-color: rgb(240, 240, 240);
+	border-radius: 20px;
+	margin-bottom: 20px;
+}
+
+.res {
+	width: 512px;
+	font-family: Arima Madurai;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 64px;
+	line-height: 105px;
+	text-align: center;
+}
+
+.ctr {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+}
+
+#music {
+	width: fit-content;
+}
