@@ -28,21 +28,27 @@ window.onload = function () {
 	const resBpm = document.querySelector(".bpm");
 	const resRev = document.querySelector(".rev");
 
+	playbackBtn.setAttribute("disabled", true);
+
 	function togglePlayback(e = null, forcePause = false) {
-		console.log("click", forcePause);
-		if (!forcePause && playbackBtn.innerHTML === "Play") {
-			playbackBtn.innerHTML = "Pause";
-			song?.play();
-		} else {
+		if (forcePause) {
 			playbackBtn.innerHTML = "Play";
 			song?.pause();
+			return;
+		}
+		if (playbackBtn.innerHTML === "Pause") {
+			playbackBtn.innerHTML = "Play";
+			song?.pause();
+		} else {
+			playbackBtn.innerHTML = "Pause";
+			song?.play();
 		}
 	}
 	playbackBtn.addEventListener("click", togglePlayback);
 
 	selectBox.addEventListener("change", (e) => {
 		if (e.target.value !== curMusic) {
-			togglePlayback((forcePause = true));
+			togglePlayback(null, true);
 			playbackBtn.setAttribute("disabled", true);
 			curMusic = e.target.value;
 
@@ -51,7 +57,6 @@ window.onload = function () {
 			resRev.setAttribute("value", `0`);
 
 			song = loadSound(`./audio/${curMusic}`, () => {
-				togglePlayback();
 				playbackBtn.removeAttribute("disabled");
 			});
 

@@ -1,13 +1,11 @@
 import os
 from flask import Flask, jsonify, request, send_from_directory, redirect
-from flask_cors import CORS, cross_origin
 from revbpm import Revbpm
 
 base_dir = os.path.dirname(os.path.abspath(__file__))
 
 def create_app(environment='dev'):
   app = Flask(__name__, static_url_path='', static_folder='static')
-  CORS(app)
   revbpm = Revbpm()
 
   @app.route('/')
