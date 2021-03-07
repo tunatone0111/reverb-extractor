@@ -1,0 +1,136 @@
+:root {
+	--light: rgb(235, 235, 235);
+	--dark: #393b44;
+}
+.dark {
+	background: var(--dark) !important;
+	color: var(--light) !important;
+}
+.inv {
+	filter: invert(100%);
+}
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+}
+
+body {
+	overflow: hidden;
+	height: 100vh;
+	background: var(--light);
+	color: var(--dark);
+}
+
+.wrp {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	width: 1024px;
+	max-height: 900px;
+	display: flex;
+	flex-direction: column;
+}
+
+h1 {
+	font-family: "Arima Madurai", cursive;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 64px;
+	line-height: 105px;
+}
+
+.vis {
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: space-evenly;
+	align-items: center;
+	border-radius: 20px;
+	margin-bottom: 20px;
+}
+
+.res {
+	width: 512px;
+	font-family: Arima Madurai;
+	font-style: normal;
+	font-weight: 500;
+	font-size: 3rem;
+	line-height: 105px;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	padding-left: 3rem;
+}
+
+#playback-btn {
+	position: relative;
+	left: -3rem;
+	align-self: center;
+}
+
+.result {
+	width: fit-content;
+}
+
+.ctr {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	background: var(--light);
+	color: var(--dark);
+	padding: 1rem;
+	border-radius: 10px;
+}
+
+#music {
+	width: fit-content;
+}
+
+.not-supported {
+	display: none;
+}
+
+@media screen and (max-width: 1024px) {
+	.wrp {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+		width: 90vw;
+		max-height: 80vh;
+		display: flex;
+		flex-direction: column;
+	}
+
+	.res {
+		padding-left: 0;
+	}
+
+	#playback-btn {
+		left: 0px;
+	}
+
+	.vis {
+		flex-direction: column-reverse;
+		justify-content: space-evenly;
+		align-items: center;
+		height: 1074px;
+		padding-bottom: 50px;
+	}
+}
+
+@media screen and (max-width: 769px) {
+	.wrp {
+		display: none;
+	}
+
+	.not-supported {
+		display: block;
+		text-align: center;
+		font-family: "Arima Madurai", cursive;
+		font-style: normal;
+		margin-top: 100px;
+	}
+}
