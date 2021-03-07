@@ -20,6 +20,7 @@ Reverb Extractor는 음악의 유사성을 다른 방식으로 측정해보자�
 
 - HTML canvas with p5
 - Flask backend API
+- tempo function from Columbia Univ. LabROSA-coversongID
 
 ### Requirements
 
